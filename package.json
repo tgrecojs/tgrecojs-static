@@ -1,0 +1,58 @@
+{
+  "name": "next-static",
+  "version": "1.1.1",
+  "description": "A simple static blog powered by next.js",
+  "main": "index.js",
+  "repository": "git@github.com:infiniteluke/next-static.git",
+  "author": "Luke Herrington <lherrington100@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./src/lib/generatePosts & next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "predeploy": "yarn run export && touch out/.nojekyll && echo \"tgrecojs.com\" > out/CNAME",
+    "deploy": "gh-pages -t -d out",
+    "lint": "eslint . --fix",
+    "flow": "flow",
+    "precommit": "lint-staged && yarn run lint && yarn run flow"
+  },
+  "dependencies": {
+    "date-fns": "^1.28.5",
+    "express": "^4.15.3",
+    "gh-pages": "^1.0.0",
+    "marked": "^0.3.6",
+    "next": "beta",
+    "prismjs": "^1.6.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "styled-components": "^2.1.0",
+    "styled-components-theme": "^1.0.5",
+    "styled-normalize": "^2.0.0",
+    "yaml-front-matter": "^3.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-styled-components": "^1.1.7",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "15.0.1",
+    "eslint-config-prettier": "2.1.1",
+    "eslint-plugin-flowtype": "2.34.0",
+    "eslint-plugin-import": "2.3.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-prettier": "2.1.1",
+    "eslint-plugin-react": "7.0.1",
+    "flow-bin": "^0.51.1",
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.1",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.4.4"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+  }
+}
