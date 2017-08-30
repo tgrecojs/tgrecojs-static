@@ -18,7 +18,11 @@ Anyone who has used the technology will tell you how easy it is to get started b
 
 Below is all that’s needed to create the shell for an app.
 
-![npm install next ex](/static/install-next-ss.png)
+```bash
+npm init -y # creates package.json
+npm install react react-dom next # self explanatory
+mkdir pages && touch pages/index.js
+```
 
 Granted that you’re package.json’s `script`'s object has been [modified correctly](https://github.com/zeit/next.js/#setup), you can paste the code below into the `pages/index.js`, run `npm run dev` and watch you’re application come to life.
 

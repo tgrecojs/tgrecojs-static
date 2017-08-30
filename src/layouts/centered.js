@@ -12,6 +12,7 @@ export default styled.div`
 
   .header {
     text-align: center;
+    font-family: 'Lato', san-serif;
     padding: ${space * 2}px ${space / 2}px;
     h1 {
       letter-spacing: 1px;
@@ -24,7 +25,9 @@ export default styled.div`
   }
 
   main {
+    font-family: 'Lato', san-serif;
     max-width: 500px;
+    font-size: 16px;
     @media (min-width: ${medium}) {
       max-width: 1000px;
     }
@@ -42,6 +45,7 @@ export default styled.div`
 
   .post {
     margin: ${space / 2}px ${space}px ${space}px;
+    line-height: 1.4em;
     h1 {
       display: inline-block;
       margin: 0;

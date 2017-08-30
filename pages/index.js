@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Post from '../src/components/Post';
+import Link from 'next/link';
 import Layout from '../src/components/Layout';
 import posts from '../posts';
 
@@ -9,15 +9,13 @@ export default Layout(
   () =>
     <div>
       {posts.map(post =>
-        <Post
-          key={post.slug}
-          title={post.title}
-          slug={post.slug}
-          date={post.date}
-          author={post.author}
-          body={post.body}
-          tags={post.tags}
-        />
+        <Link href={`/post?post=${post.slug}`} as={`/post/${post.slug}`}>
+          <a>
+            <h1 itemProp="headline" className="post--title">
+              {post.title}
+            </h1>
+          </a>
+        </Link>
       )}
     </div>,
   'Home'

@@ -10,6 +10,9 @@ import { type Post } from '../../../types/post';
 import theme from '../../lib/theme';
 
 const Article = styled.article`
+  * {
+    font-family: 'Lato', sans-serif;
+  }
   .table-wrapper {
     overflow-x: auto;
   }
