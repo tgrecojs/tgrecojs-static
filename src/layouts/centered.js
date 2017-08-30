@@ -26,7 +26,7 @@ export default styled.div`
   main {
     max-width: 500px;
     @media (min-width: ${medium}) {
-      max-width: 700px;
+      max-width: 1000px;
     }
     margin: ${space}px auto;
   }
