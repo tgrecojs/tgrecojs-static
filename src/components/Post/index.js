@@ -10,8 +10,19 @@ import { type Post } from '../../../types/post';
 import theme from '../../lib/theme';
 
 const Article = styled.article`
+  button {
+    width: 100%;
+    height: 40px;
+    background: #49768c;
+    a {
+      color: white;
+    }
+  }
   * {
     font-family: 'Lato', sans-serif;
+  }
+  h1 {
+    padding: 1em;
   }
   .table-wrapper {
     overflow-x: auto;
@@ -39,7 +50,6 @@ const Article = styled.article`
       font-size: 1.4rem;
       margin: 0;
       display: inline;
-      quotes: "\\201C""\\201D""\\2018""\\2019";
     }
     p:before {
       font-size: 5rem;
@@ -57,47 +67,46 @@ const Article = styled.article`
   }
 `;
 
-export default ({ title, author, date, tags, body, slug }: Post) =>
+export default ({ title, date, tags, body }: Post) =>
   <Article itemScope itemType="http://schema.org/BlogPosting" className="post">
     <header>
-      <Link href={`/post?post=${slug}`} as={`/post/${slug}`}>
-        <a>
-          <h1 itemProp="headline" className="post--title">
-            {title}
-          </h1>
-        </a>
-      </Link>
-      <footer className="post--info">
+      <h1 itemProp="headline" className="post--title">
+        {title}
+      </h1>
+      <div>
+        <small className="post--tags">
+          <span>Tags: </span>
+          {tags.map((tag, index) =>
+            <span key={tag} itemProp="keywords" className="post--tag">
+              <Link
+                href={`/tag?tag=${tag}`}
+                as={`/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}
+              >
+                <a>
+                  {tag}
+                </a>
+              </Link>
+              {index !== tags.length - 1 ? ', ' : ''}
+            </span>
+          )}
+        </small>
+      </div>
+      <div className="post--info">
         <span>
           <time itemProp="datePublished" dateTime={date}>
             {distanceInWordsToNow(date, { addSuffix: true })}
           </time>
         </span>
-        <span itemProp="author">
-          {author}
-        </span>
-      </footer>
+      </div>
     </header>
     <div
       className="post--body"
       dangerouslySetInnerHTML={{ __html: renderMarkup(body) }}
     />
-    <footer>
-      <small className="post--tags">
-        <span>Filed under: </span>
-        {tags.map((tag, index) =>
-          <span key={tag} itemProp="keywords" className="post--tag">
-            <Link
-              href={`/tag?tag=${tag}`}
-              as={`/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}
-            >
-              <a>
-                {tag}
-              </a>
-            </Link>
-            {index !== tags.length - 1 ? ', ' : ''}
-          </span>
-        )}
-      </small>
-    </footer>
+
+    <button>
+      <Link href="/">
+        <a>Back to home</a>
+      </Link>
+    </button>
   </Article>;

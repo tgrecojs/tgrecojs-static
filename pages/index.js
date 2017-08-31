@@ -1,22 +1,15 @@
 // @flow
 
 import React from 'react';
-import Link from 'next/link';
 import Layout from '../src/components/Layout';
 import posts from '../posts';
+import Card from '../src/components/Card/index';
 
 export default Layout(
   () =>
     <div>
-      {posts.map(post =>
-        <Link href={`/post?post=${post.slug}`} as={`/post/${post.slug}`}>
-          <a>
-            <h1 itemProp="headline" className="post--title">
-              {post.title}
-            </h1>
-          </a>
-        </Link>
-      )}
+      <h2 style={{ textAlign: 'center' }}>Lookings for free....</h2>
+      {posts.map(post => <Card {...post} />)}
     </div>,
   'Home'
 );

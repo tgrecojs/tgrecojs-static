@@ -6,22 +6,26 @@ const space = 30;
 const medium = '700px';
 
 export default styled.div`
+  .content {
+    background: #49768c;
+    flex: 1;
+    height: 100%;
+    padding: 3px;
+  }
   a {
     text-decoration: none;
   }
 
-  .header {
+  .header,
+  header {
     text-align: center;
     font-family: 'Lato', san-serif;
-    padding: ${space * 2}px ${space / 2}px;
-    h1 {
-      letter-spacing: 1px;
-      margin: 0 0 ${space / 2}px 0;
-      font-size: 3rem;
-    }
-    .header--slogan {
-      font-size: 1.2rem;
-    }
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   main {
@@ -46,6 +50,9 @@ export default styled.div`
   .post {
     margin: ${space / 2}px ${space}px ${space}px;
     line-height: 1.4em;
+    padding: 1em;
+    background: #fff;
+    border: 1px solid black;
     h1 {
       display: inline-block;
       margin: 0;

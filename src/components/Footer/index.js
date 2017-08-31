@@ -4,8 +4,9 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../../lib/theme';
 
-const Footer = styled.header`
-  background-color: ${theme.main};
+const Footer = styled.div`
+  background-color: rgb(86, 156, 183);
+  font-family: 'Lato';
   color: ${theme.light.lighten(0.3)};
   a,
   a:visited {

@@ -2,7 +2,7 @@ import createTheme from 'styled-components-theme';
 import config from '../../config';
 
 export const defaultColors = {
-  main: '#000000',
+  main: '#49768c',
   dark: '#000000',
   light: '#ffffff',
   accent: '#000000',
