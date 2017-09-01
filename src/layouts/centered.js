@@ -19,6 +19,7 @@ export default styled.div`
   .header {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     font-family: 'Inconsolata', san-serif;
     margin-top: 1.25em;

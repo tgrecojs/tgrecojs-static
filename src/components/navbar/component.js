@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const toggleLinksFn = () => {
   const linksEl = document.querySelector('.narrowLinks');
@@ -56,6 +57,11 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
       clear: left;
       padding: 0.5em 0;
     }
+    .wideDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 
     @media (min-width: 480px) {
       .navWide {
@@ -69,23 +75,37 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
     </style>
     <div className="navWide">
       <div className="wideDiv">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <Link href={`/`}><a>Blogroll</a></Link>
+        <Link href={`/contact`} as={`/contact`}><a>Contact Me</a></Link>
+        <iframe
+        src="https://platform.twitter.com/widgets/follow_button.html?screen_name=TwitterDev&show_screen_name=false&show_count=false&size=l"
+        title="Follow TwitterDev on Twitter"
+        width="80"
+        height="30"
+        style={{ border: '0', overflow: 'hidden' }}
+      />
       </div>
     </div>
     <div className="navNarrow">
       <i className="fa fa-bars fa-2x" onClick={() => toggleLinks()} />
       <div className="narrowLinks">
-        <a href="#" onClick={toggleLinks}>
-          Link 1
-        </a>
-        <a href="#" onClick={toggleLinks}>
-          Link 2
-        </a>
-        <a href="#" onClick={toggleLinks}>
-          Link 3
-        </a>
+      <Link href={`/contact`} as={`/contact`}> 
+        <a>Contact Me
+        </a></Link>
+        <Link href="/">
+        <a onClick={toggleLinks}>
+          Home
+        </a></Link>
+        <a><iframe
+        src="https://platform.twitter.com/widgets/follow_button.html?screen_name=TwitterDev&show_screen_name=false&show_count=false&size=l"
+        title="Follow tgrecojs on Twitter"
+        width="80"
+        height="30"
+        style={{ border: '0', overflow: 'hidden' }}
+      /></a>
+        <a onClick={toggleLinks}>
+        Close Menu
+      </a>
       </div>
     </div>
   </nav>;
