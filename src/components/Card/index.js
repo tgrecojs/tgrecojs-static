@@ -26,6 +26,11 @@ const PostCard = styled.div`
     width: 80%;
     text-align: left;
   }
+  @media (max-width: 600px) {
+    p {
+      display: none;
+    }
+  }
 }
 `;
 
@@ -45,9 +50,9 @@ const Btn = styled.button`
 
 export default ({ title, description, slug, tags }: Post = {}) =>
   <PostCard>
-    <h1 itemProp="headline" className="post--title">
+    <h3 itemProp="headline" className="post--title">
       {title}
-    </h1>
+    </h3>
     <p>
       {description}
     </p>

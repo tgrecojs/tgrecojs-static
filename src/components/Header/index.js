@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import config from '../../../config';
+import Link from 'next/link';
 // import { defaultColors } from '../../lib/theme';
 
 const Nav = styled.nav`
@@ -20,7 +21,16 @@ const Logo = styled.img`max-width: 350px;`;
 export default () =>
   <header>
     <Nav>
-      <h4>By Category</h4>
+    <Link href="/contact" as="/contact"> 
+      <a>
+        Contact Me
+      </a>
+    </Link>
+      <Link href="https://github.com/tgrecojs">
+        <a>
+          <img src="/static/GitHub-Mark-32px.png" alt="tgrecojs github" />
+        </a>
+      </Link>
       <iframe
         src="https://platform.twitter.com/widgets/follow_button.html?screen_name=TwitterDev&show_screen_name=false&show_count=false&size=l"
         title="Follow TwitterDev on Twitter"
@@ -34,6 +44,6 @@ export default () =>
     </h1>
     <Logo src="/static/tg-logo.png" />
     <div className="header--slogan">
-      <h3>I write about some of the stuff that I think is important.</h3>
+      <h3>Providing the latest in web application programming.</h3>
     </div>
   </header>;
