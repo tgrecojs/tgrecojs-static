@@ -19,10 +19,7 @@ const Form = styled.form`
 
 export default Layout(
   () =>
-    <Form
-      action="https://formspree.io/thomasjosephgreco@gmail.com"
-      method="POST"
-    >
+    <Form action="https://formspree.io/hello@tgrecojs.com" method="POST">
       <div>
         <label htmlFor="name">Name</label>
         <input type="text" placeholder="" name="name" />
@@ -34,9 +31,9 @@ export default Layout(
       <div>
         <label htmlFor="reason">Reason for reaching out</label>
         <textarea
-          type="reason"
+          type="text"
           placeholder="Write a sentence or two about why you're reaching out..."
-          name="_replyto"
+          name="reason"
         />
       </div>
       <input type="submit" value="Send" />
