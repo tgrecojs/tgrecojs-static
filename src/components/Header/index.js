@@ -32,7 +32,7 @@ export default () =>
     <h1 className="header--siteName">
       {config.siteName}
     </h1>
-    <Logo src="../../../static/tg-logo.png" />
+    <Logo src="/static/tg-logo.png" />
     <div className="header--slogan">
       <h3>I write about some of the stuff that I think is important.</h3>
     </div>

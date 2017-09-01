@@ -58,6 +58,11 @@ export default styled.div`
       margin: 0;
     }
   }
+  @media (max-width: 672px) {
+    .post {
+      margin: 5px;
+    }
+  }
 
   .post .post--body {
     margin: ${space / 2}px 0;

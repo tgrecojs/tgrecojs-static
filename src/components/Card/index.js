@@ -31,7 +31,7 @@ const PostCard = styled.div`
 
 const Btn = styled.button`
   height: 50px;
-  width: 20%;
+  width: 50%;
   font-size: 1.15em;
   border: 2px solid #fff;
   border-radius: 5px;

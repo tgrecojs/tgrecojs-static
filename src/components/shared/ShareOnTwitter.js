@@ -16,7 +16,7 @@ const PostFooter = (
       </Link>
     </button>
     <Link
-      href={`http://twitter.com/share?text=Read ${title} via @tgrecojs #javascript &url=tgrecojs.com/posts/${slug}`}
+      href={`http://twitter.com/share?text=Read ${title} via @tgrecojs #javascript &url=https://tgrecojs.com/posts/${slug}`}
     >
       <a className="twitter-link">
         Share Post<img

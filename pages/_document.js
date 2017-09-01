@@ -17,10 +17,7 @@ export default class MyDocument extends Document {
           <style type="text/css">
             {styledNormalize}
           </style>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <body>
           <div className="root">
