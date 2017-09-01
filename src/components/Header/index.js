@@ -21,11 +21,9 @@ const Logo = styled.img`max-width: 350px;`;
 export default () =>
   <header>
     <Nav>
-    <Link href="/contact" as="/contact"> 
-      <a>
-        Contact Me
-      </a>
-    </Link>
+      <Link href={`/contact`} as={`/contact`}>
+        <a>Contact Me</a>
+      </Link>
       <Link href="https://github.com/tgrecojs">
         <a>
           <img src="/static/GitHub-Mark-32px.png" alt="tgrecojs github" />
