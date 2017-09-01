@@ -9,6 +9,26 @@ const Anchor = styled.a`
   font-family: 'Lato';
 `;
 
+const PostCard = styled.div`
+  background: rgb(86, 156, 183);
+  padding: 1em;
+  color: #000;
+  font-family: 'Inconsolata';
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 1.5em;
+  text-align: center;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    width: 80%;
+    text-align: left;
+  }
+}
+`;
+
 const Btn = styled.button`
   height: 50px;
   width: 20%;
@@ -23,23 +43,14 @@ const Btn = styled.button`
   }
 `;
 
-export default ({ title, slug, tags }: Post) =>
-  <div
-    style={{
-      background: 'rgb(86, 156, 183)',
-      padding: '1em',
-      color: '#000',
-      fontFamily: 'Lato',
-      border: '1px solid white',
-      borderRadius: '10px',
-      margin: '1.5em',
-      textAlign: 'center',
-      lineHeight: '1.5',
-    }}
-  >
+export default ({ title, description, slug, tags }: Post = {}) =>
+  <PostCard>
     <h1 itemProp="headline" className="post--title">
       {title}
     </h1>
+    <p>
+      {description}
+    </p>
     <Link href={`/post?post=${slug}`} as={`/post/${slug}`}>
       <Btn>
         {' '}<Anchor>Read Post</Anchor>
@@ -63,4 +74,4 @@ export default ({ title, slug, tags }: Post) =>
         )}
       </small>
     </footer>
-  </div>;
+  </PostCard>;

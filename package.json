@@ -11,10 +11,10 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
+    "predeploy": "yarn run export && touch out/.nojekyll && echo \"tgrecojs.com\" > out/CNAME",    
     "deploy": "gh-pages -t -d out",
     "lint": "eslint . --fix",
-    "flow": "flow",
-    "precommit": "lint-staged && yarn run lint && yarn run flow"
+    "flow": "flow"
   },
   "dependencies": {
     "date-fns": "^1.28.5",

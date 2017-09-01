@@ -1,5 +1,6 @@
 ---
 title: Why I Love Pure Components (& you should too!)
+description: This article takes a look at Functional Stateless Components which React released in v0.14. Since then, they've made a huge impact in the community by providing users with a cleaner syntax that allows for us to write more declarative code. To show why this is so helpful, this article will take a look at stateless components and finish up with some unit tests.
 slug: pure-components
 author: Thomas Greco
 date: 2017-6-10 15:00 PDT

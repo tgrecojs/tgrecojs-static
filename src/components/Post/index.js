@@ -8,21 +8,44 @@ import styled from 'styled-components';
 import renderMarkup from '../../lib/renderMarkup';
 import { type Post } from '../../../types/post';
 import theme from '../../lib/theme';
+import ShareButton from '../shared/ShareOnTwitter';
 
 const Article = styled.article`
+  .twitter-icon {
+    max-width: 50px;
+  }
+  .twitter-link {
+    display: flex;
+    align-items: center;
+  }
+  .post-btn-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
   button {
-    width: 100%;
+    width: 25%;
     height: 40px;
     background: #49768c;
     a {
       color: white;
     }
   }
+  @media (max-width: 600px) {
+    button {
+      width: 50%;
+      margin-bottom: 16px;
+    }
+    .post-btn-row {
+      flex-direction: column;
+    }
+  }
   * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inconsolata', sans-serif;
   }
   h1 {
-    padding: 1em;
+    padding: .5em;
+    line-height: 1.3em;
   }
   .table-wrapper {
     overflow-x: auto;
@@ -67,7 +90,7 @@ const Article = styled.article`
   }
 `;
 
-export default ({ title, date, tags, body }: Post) =>
+export default ({ title, date, tags, body, slug }: Post) =>
   <Article itemScope itemType="http://schema.org/BlogPosting" className="post">
     <header>
       <h1 itemProp="headline" className="post--title">
@@ -103,10 +126,5 @@ export default ({ title, date, tags, body }: Post) =>
       className="post--body"
       dangerouslySetInnerHTML={{ __html: renderMarkup(body) }}
     />
-
-    <button>
-      <Link href="/">
-        <a>Back to home</a>
-      </Link>
-    </button>
+    <ShareButton title={title} slug={slug} />
   </Article>;

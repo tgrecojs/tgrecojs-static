@@ -19,7 +19,7 @@ export default styled.div`
   .header,
   header {
     text-align: center;
-    font-family: 'Lato', san-serif;
+    font-family: 'Inconsolata', san-serif;
   }
 
   header {
@@ -29,7 +29,7 @@ export default styled.div`
   }
 
   main {
-    font-family: 'Lato', san-serif;
+    font-family: 'Inconsolata', san-serif;
     max-width: 500px;
     font-size: 16px;
     @media (min-width: ${medium}) {

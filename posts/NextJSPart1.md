@@ -1,5 +1,6 @@
 ---
 title: 5 (of the many things) to love about Next.js
+description: Next.js continues to be considered a “win” amongst a number of developers everywhere. (If you couldn't guess, I am one of them!) To help shine light on some of the reasons why I love the framework, I dediced to put together a series of posts on the topic. In this first one, I'm going to cut right to the chase and shed light on a few of the amazing things that Next.js makes possible.
 slug: next-js-part1
 author: Thomas Greco
 date: 2017-8-29 20:00 EST
@@ -10,7 +11,6 @@ tags:
 
 ## Introducing Next.js
 Next.js continues to be considered a “win” amongst a number of developers everywhere. (If you couldn't guess, I am one of them!) To help shine light on some of the reasons why I love the framework, I dediced to put together a series of posts on the topic. In this first one, I'm going to cut right to the chase and shed light on a few of the amazing things that Next.js makes possible.
-
 
 ### Ease of Use
 
