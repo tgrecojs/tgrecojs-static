@@ -16,16 +16,12 @@ export default styled.div`
     text-decoration: none;
   }
 
-  .header,
-  header {
-    text-align: center;
-    font-family: 'Inconsolata', san-serif;
-  }
-
-  header {
+  .header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Inconsolata', san-serif;
+    margin-top: 1.25em;
   }
 
   main {
@@ -33,7 +29,7 @@ export default styled.div`
     max-width: 500px;
     font-size: 16px;
     @media (min-width: ${medium}) {
-      max-width: 1000px;
+      max-width: 100%;
     }
     margin: ${space}px auto;
   }

@@ -13,7 +13,7 @@ import { type Request } from '../../../types/request';
 import { type NextPage } from '../../../types/next';
 import Layouts from '../../layouts';
 import { defaultColors } from '../../lib/theme';
-
+import Nav from '../navbar/component'
 const Layout = Layouts[config.layout || 'none'];
 
 export default (Page: NextPage, title: string) => ({ ...props }: Request) =>
@@ -22,6 +22,7 @@ export default (Page: NextPage, title: string) => ({ ...props }: Request) =>
       <Head>
         <title>{`${config.siteName} - ${title}`}</title>
       </Head>
+      <Nav />
       <Header />
       <div className="content">
         <main className="main">
