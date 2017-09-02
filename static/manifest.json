@@ -3,7 +3,7 @@
     "name": "tgrecojs",
     "icons": [
       {
-        "src":"static/tg-logo192.png",
+        "src":"./tg-logo192.png",
         "sizes": "192x192",
         "type": "image/png"
       }
