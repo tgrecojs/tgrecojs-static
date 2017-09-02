@@ -21,12 +21,12 @@ export default styled.div`
     flex-direction: column;
     text-align: center;
     align-items: center;
-    font-family: 'Inconsolata', san-serif;
+    font-family: 'Lato', san-serif;
     margin-top: 1.25em;
   }
 
   main {
-    font-family: 'Inconsolata', san-serif;
+    font-family: 'Lato', san-serif;
     max-width: 500px;
     font-size: 16px;
     @media (min-width: ${medium}) {

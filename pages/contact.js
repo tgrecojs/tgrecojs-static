@@ -3,16 +3,23 @@ import Layout from '../src/components/Layout';
 import styled from 'styled-components';
 
 const Form = styled.form`
+  max-width: 100%;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  align-items: center;
   div {
     display: flex;
+    width: 60%;
     padding: 1em;
     label,
-    input {
+    input,
+    select,
+    textarea {
       flex: 1 0 120px;
+    }
+    ::placeholder {
+      color: red;
+      font-size: 1.5em;
     }
   }
 `;
@@ -29,10 +36,23 @@ export default Layout(
         <input type="email" placeholder="johndoe@gmail.com" name="_replyto" />
       </div>
       <div>
-        <label htmlFor="reason">Reason for reaching out</label>
+        <label htmlFor="reasonSelected">Subject</label>
+        <select name="reasonSelected">
+          <option value="Engineering Opportunity">
+            JavaScript Engineering Opportunity
+          </option>
+          <option value="Development Opportunity">Full Stack Services</option>
+          <option value="Graphic Design">Logo & Icon Design</option>
+          <option value="books">JavaScript Mentorship</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="reason">More Info</label>
         <textarea
           type="text"
-          placeholder="Write a sentence or two about why you're reaching out..."
+          rows="10"
+          columns="4"
+          placeholder="Need more than just two or three sentences? "
           name="reason"
         />
       </div>

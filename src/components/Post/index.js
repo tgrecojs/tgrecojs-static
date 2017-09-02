@@ -41,7 +41,7 @@ const Article = styled.article`
     }
   }
   * {
-    font-family: 'Inconsolata', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   h1 {
     padding: .5em;

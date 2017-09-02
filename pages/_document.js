@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Lato|Inconsolata"
+            href="https://fonts.googleapis.com/css?family=Lato"
           />
         </body>
       </html>

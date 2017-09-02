@@ -13,7 +13,7 @@ const PostCard = styled.div`
   background: rgb(86, 156, 183);
   padding: 1em;
   color: #000;
-  font-family: 'Inconsolata';
+  font-family: 'Lato';
   border: 1px solid white;
   border-radius: 10px;
   margin: 1.5em;

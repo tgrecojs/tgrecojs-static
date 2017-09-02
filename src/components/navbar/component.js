@@ -16,7 +16,7 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
       {`
     nav {
       background-color: rgb(86,156,183);
-      font-family: 'Inconsolata',san-serif
+      font-family: 'Lato',san-serif
       overflow: hidden;
       width: 100%;
       position: fixed;
@@ -26,6 +26,10 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
     }
     a {
       color: #fff;
+      transition: all .2s ease-in-out;
+    }
+    a:hover {
+      transform: scale(1.2);
     }
     a:visited {
       color: #fff;
@@ -75,37 +79,40 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
     </style>
     <div className="navWide">
       <div className="wideDiv">
-        <Link href={`/`}><a>Blogroll</a></Link>
-        <Link href={`/contact`} as={`/contact`}><a>Contact Me</a></Link>
-        <iframe
-        src="https://platform.twitter.com/widgets/follow_button.html?screen_name=TwitterDev&show_screen_name=false&show_count=false&size=l"
-        title="Follow TwitterDev on Twitter"
-        width="80"
-        height="30"
-        style={{ border: '0', overflow: 'hidden' }}
-      />
+        <Link href={`/`}>
+          <a>Blogroll</a>
+        </Link>
+        <Link href={`/contact`} as={`/contact`}>
+          <a>Contact Me</a>
+        </Link>
+        <a><iframe
+          src="https://platform.twitter.com/widgets/follow_button.html?screen_name=tgrecojs&show_screen_name=false&show_count=false&size=l"
+          title="Follow TwitterDev on Twitter"
+          width="80"
+          height="30"
+          style={{ border: '0', overflow: 'hidden' }}
+        /></a>
       </div>
     </div>
     <div className="navNarrow">
       <i className="fa fa-bars fa-2x" onClick={() => toggleLinks()} />
       <div className="narrowLinks">
-      <Link href={`/contact`} as={`/contact`}> 
-        <a>Contact Me
-        </a></Link>
+        <Link href={`/contact`} as={`/contact`}>
+          <a>Contact Me</a>
+        </Link>
         <Link href="/">
-        <a onClick={toggleLinks}>
-          Home
-        </a></Link>
-        <a><iframe
-        src="https://platform.twitter.com/widgets/follow_button.html?screen_name=TwitterDev&show_screen_name=false&show_count=false&size=l"
-        title="Follow tgrecojs on Twitter"
-        width="80"
-        height="30"
-        style={{ border: '0', overflow: 'hidden' }}
-      /></a>
-        <a onClick={toggleLinks}>
-        Close Menu
-      </a>
+          <a onClick={toggleLinks}>Home</a>
+        </Link>
+        <a>
+          <iframe
+            src="https://platform.twitter.com/widgets/follow_button.html?screen_name=TwitterDev&show_screen_name=false&show_count=false&size=l"
+            title="Follow tgrecojs on Twitter"
+            width="80"
+            height="30"
+            style={{ border: '0', overflow: 'hidden' }}
+          />
+        </a>
+        <a onClick={toggleLinks}>Close Menu</a>
       </div>
     </div>
   </nav>;
