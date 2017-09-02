@@ -5,14 +5,14 @@ import { type Post } from '../../../types/post';
 
 // import theme from '../../lib/theme';
 const Anchor = styled.a`
-  color: #000;
+  color: #fff;
   font-family: 'Lato';
 `;
 
 const PostCard = styled.div`
   background: rgb(86, 156, 183);
   padding: 1em;
-  color: #000;
+  color: #fff;
   font-family: 'Lato';
   border: 1px solid white;
   border-radius: 10px;
