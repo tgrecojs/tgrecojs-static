@@ -56,7 +56,7 @@ export default ({ title, description, slug, tags }: Post = {}) =>
     <p>
       {description}
     </p>
-    <Link href={`/post?post=${slug}`} as={`/post/${slug}`}>
+    <Link prefetch href={`/post?post=${slug}`} as={`/post/${slug}`}>
       <Btn>
         {' '}<Anchor>Read Post</Anchor>
       </Btn>
@@ -66,7 +66,7 @@ export default ({ title, description, slug, tags }: Post = {}) =>
         <span>Filed under: </span>
         {tags.map((tag, index) =>
           <span key={tag} itemProp="keywords" className="post--tag">
-            <Link
+            <Link prefetch
               href={`/tag?tag=${tag}`}
               as={`/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}
             >

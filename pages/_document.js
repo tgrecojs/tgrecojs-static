@@ -17,7 +17,17 @@ export default class MyDocument extends Document {
           <style type="text/css">
             {styledNormalize}
           </style>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <link rel="manifest" href="./static/manifest.json" />
+          <meta name="theme-color" content="#56a5b7" />
+          <link
+            rel="shortcut icon"
+            type="image/png"
+            href="/static/tg-logo.png"
+          />
         </Head>
         <body>
           <div className="root">
@@ -26,9 +36,12 @@ export default class MyDocument extends Document {
           <NextScript />
           <link
             rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css"
+            href="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-coy.min.css"
           />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Lato"

@@ -1,8 +1,7 @@
 // @flow
 
 import React from 'react';
-import Link from 'next/link';
-import Post from '../src/components/Post';
+import Card from '../src/components/Card/index';
 import posts from '../posts';
 import { type Request } from '../types/request';
 import Layout from '../src/components/Layout';
@@ -10,25 +9,12 @@ import Layout from '../src/components/Layout';
 export default Layout(
   ({ url: { query: { tag } } }: Request) =>
     <div>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-      <h1>
-        {tag}
-      </h1>
+      <h2 style={{textAlign: 'center', color: 'white'}}>
+        Current Tag: {tag}
+      </h2>
       {posts
         .filter(post => post.tags && post.tags.includes(tag))
-        .map(post =>
-          <Post
-            key={post.slug}
-            title={post.title}
-            slug={post.slug}
-            date={post.date}
-            author={post.author}
-            body={post.body}
-            tags={post.tags}
-          />
-        )}
+        .map(post => <Card {...post} />)}
     </div>,
   'Tag'
 );

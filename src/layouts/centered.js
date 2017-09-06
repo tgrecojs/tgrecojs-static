@@ -51,7 +51,6 @@ export default styled.div`
     background: #fff;
     border: 1px solid black;
     h1 {
-      display: inline-block;
       margin: 0;
     }
   }
@@ -59,22 +58,5 @@ export default styled.div`
     .post {
       margin: 5px;
     }
-  }
-
-  .post .post--body {
-    margin: ${space / 2}px 0;
-  }
-
-  .post--info {
-    margin: ${space / 2}px 0;
-  }
-
-  .post--info span:not(:first-child) {
-    border-left: 1px solid #000;
-    padding-left: 5px;
-  }
-
-  .post--info span:first-child {
-    padding-right: 5px;
   }
 `;

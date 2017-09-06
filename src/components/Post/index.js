@@ -40,12 +40,20 @@ const Article = styled.article`
       flex-direction: column;
     }
   }
-  * {
+  img {
+    max-width: 100%;
+  }
+  code {
+    color: #49768c;
+    font-size: .9em;
+  }
+  p, h1, h2, h3 ,h4, button {
     font-family: 'Lato', sans-serif;
   }
   h1 {
     padding: .5em;
     line-height: 1.3em;
+    text-align: center;
   }
   .table-wrapper {
     overflow-x: auto;
@@ -93,7 +101,7 @@ const Article = styled.article`
 export default ({ title, date, tags, body, slug }: Post) =>
   <Article itemScope itemType="http://schema.org/BlogPosting" className="post">
     <header>
-      <h1 itemProp="headline" className="post--title">
+      <h1 itemProp="headline">
         {title}
       </h1>
       <div>
@@ -114,7 +122,7 @@ export default ({ title, date, tags, body, slug }: Post) =>
           )}
         </small>
       </div>
-      <div className="post--info">
+      <div>
         <span>
           <time itemProp="datePublished" dateTime={date}>
             {distanceInWordsToNow(date, { addSuffix: true })}
@@ -123,7 +131,6 @@ export default ({ title, date, tags, body, slug }: Post) =>
       </div>
     </header>
     <div
-      className="post--body"
       dangerouslySetInnerHTML={{ __html: renderMarkup(body) }}
     />
     <ShareButton title={title} slug={slug} />
