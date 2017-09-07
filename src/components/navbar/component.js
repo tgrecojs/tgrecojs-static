@@ -23,6 +23,7 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
       top: 0;
       padding: 1em;
       border-bottom: 1px solid #49768c;
+      z-index: 1;
     }
     a {
       color: #fff;

@@ -5,7 +5,7 @@ slug: next-js-part1
 author: Thomas Greco
 date: 2017-8-29 20:00 EST
 tags:
-  - React
+  - ReactJS
   - nextjs
 ---
 
@@ -36,7 +36,7 @@ export default ({title = 'How tight is this next.js thing?'}) => <h2>{title}</h2
 
 ### Automatic Code Splitting
 
-Any programmer in the now will tell you how important code splitting is to ensure an application’s performance is optimal. As it’s name suggests, code splitting allows us to *split* our application code up into a series of lightweight bundles. Instead of loading all of our JavaScript, our application will only load the bundle needed. Webpack is the tool most associated with this process. Instead of having to configure webpack to perform this, we can rely on Next.js! Let' get a better understanding of how this is accomplished so we can better understand what's going on. 
+Any programmer in the now will tell you how important code splitting is to ensure an application’s performance is optimal. As it’s name suggests, [code splitting](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwiMpYm24JHWAhXFSyYKHR-VAk4QFggyMAI&url=https%3A%2F%2Fwebpack.github.io%2Fdocs%2Fcode-splitting.html&usg=AFQjCNHoevmMDgzx9nVy7XMvPx5xusQ3Kg) allows us to *split* our application code up into a series of lightweight bundles. Instead of loading all of our JavaScript, our application will only load the bundle needed. Webpack is the tool most associated with this process. Instead of having to configure webpack to perform this, we can rely on Next.js! Let' get a better understanding of how this is accomplished so we can better understand what's going on. 
 
 Below shows an example of the `.next` directory created from running `next build`. 
 
@@ -57,7 +57,7 @@ To harness the benefits of prefetching, all users need to do is add the `prefetc
 <Link prefetch href="/blog" />
 ```
 
-When next.js sees `prefetch`, it will provide a ServiceWorker for the corresponding route which will load all of the JavaScript behind the scenes. I, along with other developers, was initially under the impression that this magic `prefetch` attribute would wire up a service worker that would cache my applicaton's blog posts. After all, I linked to them with `prefetch`! It turns out that this is actually better that we must wire up our own service worker to perform this. It's also a tremendous example of how the tools Next.js provides users with are so crucial yet till pretty unonpinionated. Next.js wants nothing to do with how you handle your data. They just want to supply the tools needed for you to handle it in the best manner.
+When next.js sees `prefetch`, it will provide a ServiceWorker for the corresponding route which will load all of the JavaScript behind the scenes. I, [along with other developers](https://github.com/zeit/next.js/issues/740), was initially under the impression that this magic `prefetch` attribute would wire up a service worker that would cache my applicaton's blog posts. After all, I linked to them with `prefetch`! It turns out that this is actually better that we must wire up our own service worker to perform this. It's also a tremendous example of how the tools Next.js provides users with are so crucial yet till pretty unonpinionated. Next.js wants nothing to do with how you handle your data. They just want to supply the tools needed for you to handle it in the best manner.
 
 ### Server Side Rendering
 I still haven’t covered the fact that Next.js allows all of our application code to utilize server side rendering (SSR), thus providing the [benefits that come with this](https://medium.com/walmartlabs/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8). By employing SSR, we…
@@ -72,7 +72,7 @@ Additionally, Next.js makes it super easy to define custom routes on the server 
 By taking a look at the [projects repo](https://github.com/zeit/next.js/tree/v3-beta/examples), you will see a slew of examples with frameworks like Express, Koa, and Hapi, further showing how extendable Next.js truly is. Next.js simply provides all of these amazing benefits and let’s the developer pick and choose how they want to harnesss them. 
 
 ### HMR and Error Reporting
-The effectiveness of Hot-module replacement (HMR) has made it a must-have during development. Instead of reloading an entire application when code is changed, HMR will only recreate modules that have been altered. Webpack’s homepage describes the practice as “Livereload for every module” so as you can image, this allows next.js to come equipped with a high-powered development process but it doesn’t stop there. Users will quickly learn about the amazing error messages that Next.js immediately renders to the browser whenever code is in correct. 
+The effectiveness of [Hot-module replacement](https://webpack.github.io/docs/hot-module-replacement.html) (HMR) has made it a must-have for the development process. Instead of reloading an entire application when code is changed, HMR will only recreate modules that have been altered. Webpack’s homepage describes the practice as “Livereload for every module” so as you can image, this allows next.js to come equipped with a high-powered development process but it doesn’t stop there. Users will quickly learn about the amazing error messages that Next.js immediately renders to the browser whenever code is in correct. 
 
 Yes, you’ve heard that correct. I said “amazing error messages”. Surely I must be crazy. Well, take a look for yourself. I’ve recorded a quick clip of this in action. 
 
@@ -80,7 +80,7 @@ Yes, you’ve heard that correct. I said “amazing error messages”. Surely I 
 <iframe src="https://giphy.com/embed/3ov9jYfehcX86yv4xa" width="480" height="281" frameBorder="0"allowFullScreen></iframe>
 </div>
 
-At first we see the application being rendered correctly in the browser. To demonstrate Next.js’ ability then see an error as a result of me removing the `>` symbol from my JSX. No matter how small, these errors can cause serious headaches due to all sorts of nonsense so I thought this provided a good example of Next.js instantly picking up the error and it doesn’t stop pinpoints the file and even the line on which this error is occurring thus making tracking down bugs a breeze. Every developer knows the struggle of spending more time than they’d be willing to admit on finding a bug, only to find out that the issue was embarrassingly trivial. Next.js eliminates this problem and thus allows developers to work with great efficiency. 
+At first we see the application being rendered correctly in the browser. To demonstrate Next.js’ ability then see an error as a result of me removing the `>` symbol from my JSX. No matter how small, these errors can cause serious headaches due to all sorts of nonsense so I thought this provided a good example of Next.js instantly picking up the error and it doesn’t stop pinpoints the file and even the line on which this error is occurring thus making tracking down bugs a breeze. Every developer knows the struggle of spending more time than they’d be willing to admit on finding a bug, only to find out that the issue was embarrassingly trivial. Next.js eliminates this problem and allows developers to work with great efficiency. 
 
 ### Final thoughts
 Hopefully by now you’re beginning to realize how powerful of a framework Zeit has created with Next.js. In my next post, i'm going to dive deeper into Next.js and in particular, my experiences working it. In the meantime, I highly recommend you checking out yet another home-run that Zeit has released to the people! 

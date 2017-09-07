@@ -1,5 +1,5 @@
 ---
-title: Unit Testing in Tape Vs. Jest
+title: Unit Testing ReactJS | Tape vs. Jest
 description:  After recently switching my unit tests from Tape to using Jest I decided to write a post on some of my experiences while teaching readers a lesson on testing!
 slug: tape-jest-testing
 author: Thomas Greco
@@ -11,7 +11,7 @@ tags:
 
 ## Getting Acquainted with Jest
 #### Intro
-Like any developer, my preference of tools that was built pretty much entirely on past experiences. This means that if i’m not using the tool and it’s known to be an aid to developers then there’s a good chance i’m uninformed on the topic. This was particularly true with Jest, which has become the most widely used library for testing ReactJS applications, so I thought it would be wise to explore the topic a little bit in a blog post. In this post, I want to share my feedback about recently using Jest while contributing to the next-static project.  
+Like any developer, my preference of tools has been built pretty much entirely on my past experiences. If i’m not using the tool and it’s known to be an aid to developers then there’s a good chance i’m uninformed on the topic. This was particularly true with Jest, which has become the most widely used library for testing ReactJS applications, so I thought it would be wise to explore the topic a little bit in a blog post. In this post, I want to share my feedback about recently using Jest while contributing to the next-static project.  
 
 I recently ended up pivoting from a dynamic web application to a static site for tgrecojs.com. next-static and the solution has worked A1 so I ended up contributing to the project. The first order of business was to write some tests for this project so I dove right in. Throughout 2017 I received a ton of experience writing unit tests for ReactJS apps but I always used tape so it was no shock that I initially gravitated to my normal dev environment for writing tests.
 
@@ -47,27 +47,29 @@ Once ran, this log for this test would look like the image below.
 
 ![tap](https://s26.postimg.org/7glcfzwjd/TAP-_OUTPUT.png)
 
-Isn’t that pretty? I’m a sucker for some good TAP which tape produces little did I know that I was taking it for granted but more on that in a moment. At this point, I finally had something that I could confidently push over to the next-static repo. About a day later, I received this remark from the project owner.
+Isn’t that pretty? I’m a sucker for some good TAP which tape produces. Little did I know that I was taking it for granted but more on that in a moment. At this point, I finally had something that I could confidently push over to the next-static repo. About a day later, I received this remark from the project owner.
 
 ![next static issue](https://s26.postimg.org/a0gza3k3d/Screen_Shot_2017-09-05_at_1.03.05_AM.png)
 
-But of course! Why was I using this stone-age technology when I could just plug in Jest! All kidding aside I wasn’t surprised by this. I know how crazy important of a tool Jest has become to so many developers and I was just excited to dive into the framework.
+But of course! Why was I using this stone-age technology when I could just plug in Jest!? All kidding aside I wasn’t surprised by this. I know how crazy important of a tool Jest has become to so many developers and I was just excited to dive into the framework.
 
 ### Becoming one with Jest
 I knew that migrated this super basic test wasn’t going to be hard. I just needed to know how my test was to be set up.
 
-Initially, I use the `test` function imported from the tape library. Once my test was complete, it was then loaded in an `index.test.js` file which I had set up at the main test file. One of Jest’s marquee behaviors is it’s ability to magically runs tests as long as they are either:
+I initially had the project's `test` script to fire off the [babel-cli](https://www.npmjs.com/package/babel-cli)  and run any tests that has been imported inside of an entry point file, which in my case was [`index.test.js`](https://github.com/infiniteluke/next-static/pull/9/commits/006dbe18a2b80f25f9b4d95c090e940da09f09f7#diff-275a6743b2ff7d68e3d76f3462691716). Because I was now relying on Jest, I could remove this file and I could also change the `test` script to `jest`. Once that was in place, Jest was pretty much ready to go. 
+
+One of Jest’s marquee behaviors is it’s ability to magically runs tests as long as they are either:
 * in *.test.js or *.spec.js
 * they are in a tests folder.
 
-At the time of writing my test, I wasn’t even aware of this criteria however my code was inside `test.js` file so everything worked out great. Additionally, I could completely eliminate that main index.test.js file as the `jest` command would navigate to the tests on its own. Once inside these tests, Jest will look for specific global variables that it provides users with for writing tests. In my case, I had to swap out `test` for Jest's `describe` function which will signify that a test suite has been created.
+At the time of writing my test, I wasn’t even aware of this criteria however my code was inside [test.js](https://github.com/infiniteluke/next-static/blob/master/src/components/Post/test.js) file so everything worked out great. Additionally, I could completely eliminate that main index.test.js file as the `jest` command would navigate to the tests on its own. Once inside these tests, Jest will look for specific global variables that it provides users with for writing tests. In my case, I had to swap out `test` for Jest's `describe` function which will signify that a test suite has been created.
 
 > Globals
 > In your test files, Jest puts each of these methods and objects into the global environment. You don't have to require or import anything to use them.
  - [Jest Docs](https://facebook.github.io/jest/docs/en/api.html)
 
 
-These globals are what allow Jest to magically run our tests without importing any code. I don’t want to be over critical of an extremely well known tool like Jest however I became very conscious of polluting my global scope throughout the last year. Yes, even in regards to testing. Over time, I became super comfortable with importing tape directly. It only took a write an import statement (I could add to a VS code snippet if I really needed to) and I feel comfort in knowing my test code is completely self-contained and free from outside bugs. Now, I don’t want to make it seem like i’m nitpicking here. This is merely my feedback on the library. That being said, I think that this no set-up configuration could allows testing to get off the ground as soon as possible.
+These globals are what allow Jest to magically run our tests without needing us to any code. I don’t want to be over critical of an extremely well known tool like Jest however I became very conscious of polluting my global scope throughout the last year. Yes, even in regards to testing. Over time, I became super comfortable with importing tape directly. It only took a write an import statement (I could add to a VS code snippet if I really needed to) and I feel comfort in knowing my test code is completely self-contained and free from outside bugs. Now, I don’t want to make it seem like i’m nitpicking here. This is merely my feedback on the library. That being said, I think that this no set-up configuration could allows testing to get off the ground as soon as possible.
 
 
 Sure enough, I ran my tests and saw that Jest was picking up on my code. I didn’t know the .test or .spec criteria at this time but my tests already fell in line with the criteria necessary. I modified my code to fit Jest’s syntax, and my unit test looked like the following.

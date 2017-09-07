@@ -1,5 +1,5 @@
 ---
-title: Why I Love Pure Components (& you should too!)
+title: The Benefits of Using Functional Stateless Components in ReactJS
 description: This article takes a look at Functional Stateless Components which React released in v0.14. Since then, they've made a huge impact in the community by providing users with a cleaner syntax that allows for us to write more declarative code. To show why this is so helpful, this article will take a look at stateless components and finish up with some unit tests.
 slug: pure-components
 author: Thomas Greco
@@ -18,7 +18,7 @@ Produces no side effects.
 Relies on no external mutable state." </br>
 > Eric Elliott, Master the JavaScript interview: [What is a Pure Function](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 
-Equipped with the right amount of tests, the use of pure functions can help bring peace of mind to developers by ensuring that any scenario that has been tested will not have an unintended result in the application. As you can imagine, this can go along way when building large scale applications. It should also come as no surprise to know that pure functions are the heart of Redux which relies on JavaScript’s `[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=a)` function. 
+Equipped with the right amount of tests, the use of pure functions can help bring peace of mind to developers by ensuring that any scenario that has been tested will not have an unintended result in the application. As you can imagine, this can go along way when building large scale applications. It should also come as no surprise to know that pure functions are the heart of Redux which relies on JavaScript’s [`reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce?v=a) function. 
 
 In an upcoming post, i’ll go into further detail on how reduce works. For now, I want to continue on with the idea of writing “bullet-proof” React components using pure functions. To best illustrate this, i’m going to show some code that shows a react child component.
 

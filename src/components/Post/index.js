@@ -40,14 +40,32 @@ const Article = styled.article`
       flex-direction: column;
     }
   }
+  p img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   img {
-    max-width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    margin: auto;
+  }
+  @media and (max-width: 600px) {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
   code {
     color: #49768c;
     font-size: .9em;
   }
-  p, h1, h2, h3 ,h4, button {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  button {
     font-family: 'Lato', sans-serif;
   }
   h1 {
@@ -130,8 +148,6 @@ export default ({ title, date, tags, body, slug }: Post) =>
         </span>
       </div>
     </header>
-    <div
-      dangerouslySetInnerHTML={{ __html: renderMarkup(body) }}
-    />
+    <div dangerouslySetInnerHTML={{ __html: renderMarkup(body) }} />
     <ShareButton title={title} slug={slug} />
   </Article>;

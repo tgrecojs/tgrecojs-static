@@ -27,6 +27,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",
+    "react-modal": "^2.3.2",
     "react-sticky": "^6.0.1",
     "styled-components": "^2.1.0",
     "styled-components-theme": "^1.0.5",

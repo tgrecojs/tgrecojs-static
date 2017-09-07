@@ -81,9 +81,10 @@ export default Layout(
           <option value="Engineering Opportunity">
             JavaScript Engineering Opportunity
           </option>
-          <option value="Development Opportunity">Full Stack Services</option>
+          <option value="Development Opportunity">Website Development and Design</option>
           <option value="Graphic Design">Logo & Icon Design</option>
-          <option value="books">JavaScript Mentorship</option>
+          <option value="mentorship">JavaScript Mentorship</option>
+          <option value="other">Just saying Hello!</option>
         </select>
       </div>
       <div>
@@ -92,7 +93,7 @@ export default Layout(
           type="text"
           rows="10"
           columns="4"
-          placeholder="Need more than just two or three sentences? "
+          placeholder="Use this text area to provide some more information regarding your inquiry."
           name="reason"
         />
       </div>
