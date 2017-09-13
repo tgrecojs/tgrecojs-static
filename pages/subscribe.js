@@ -99,13 +99,14 @@ const data = JSON.stringify({
 
 const config = {
   headers: {
-    'Authorization':
-       'Bearer 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',
-     'content-type': 'application/json',
-   },
-   url: 'https://api.sendgrid.com/v3/mail/send',
-   data,
-}
+    Authorization:
+      'Bearer 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',
+    'content-type': 'application/json',
+  },
+  url:
+    'https://wt-9a23f117fecfd46745cb0cfc8078d671-0.run.webtask.io/tgrecojs-signup',
+  data,
+};
 export default Layout(({ settings, emailData = config }) => {
   axios
     .post(emailData)
@@ -115,37 +116,21 @@ export default Layout(({ settings, emailData = config }) => {
     })
     .catch(e => new Error('Problem with Sendrid', e));
   return (
-    <Form action="https://formspree.io/hello@tgrecojs.com" method="POST">
+    <Form
+      action="https://wt-9a23f117fecfd46745cb0cfc8078d671-0.run.webtask.io/tgrecojs-signup"
+      method="POST"
+    >
       <div>
-        <label htmlFor="name">Name</label>
-        <input type="text" placeholder="" name="name" />
+        <label htmlFor="to_email">Email</label>
+        <input type="email" placeholder="from@gmail.com" name="to_email" />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
-        <input type="email" placeholder="johndoe@gmail.com" name="_replyto" />
+        <label htmlFor="from_email">Email</label>
+        <input type="email" placeholder="from@gmail.com" name="from_email" />
       </div>
       <div>
-        <label htmlFor="reasonSelected">Subject</label>
-        <select name="reasonSelected">
-          <option value="Engineering Opportunity">
-            JavaScript Engineering Opportunity
-          </option>
-          <option value="Development Opportunity">
-            Website Development and Design
-          </option>
-          <option value="Graphic Design">Logo & Icon Design</option>
-          <option value="mentorship">JavaScript Mentorship</option>
-          <option value="other">Just saying Hello!</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="reason">More Info</label>
-        <textarea
-          type="text"
-          rows="10"
-          columns="4"
-          placeholder="Use this text area to provide some more information regarding your inquiry."
-          name="reason" />
+        <label htmlFor="title">title</label>
+        <input type="text" placeholder="text" name="title" />
       </div>
       <BtnRow>
         <button type="submit">Click to Submit</button>

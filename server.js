@@ -1,13 +1,28 @@
 const express = require('express');
 const next = require('next');
+const sgMail = require('@sendgrid/mail');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const msg = {
+  to: 'tgreco@tgrecojs.com',
+  from: 'tgreco@tgrecojs.com',
+  subject: 'Sending with SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+};
 
 app.prepare().then(() => {
   const server = express();
 
+  server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
   // custom route for posts
   server.get('/post/:slug', (req, res) =>
     app.render(req, res, '/post', {
@@ -21,7 +36,9 @@ app.prepare().then(() => {
     })
   );
 
-  server.get('*', (req, res) => handle(req, res));
+  server.get('*', (req, res) =>{ 
+    handle(req, res)
+});
 
   server.listen(3000, err => {
     if (err) throw err;

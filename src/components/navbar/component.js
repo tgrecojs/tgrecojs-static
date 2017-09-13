@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
+import Modal from '../shared/modal';
 const toggleLinksFn = () => {
   const linksEl = document.querySelector('.narrowLinks');
   if (linksEl.style.display === 'block') {

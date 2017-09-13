@@ -2,3 +2,4 @@ node_modules
 .next
 posts/index.js
 out
+.env

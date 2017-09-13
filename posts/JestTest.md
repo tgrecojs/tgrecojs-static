@@ -10,12 +10,12 @@ tags:
 ---
 
 ## Getting Acquainted with Jest
-#### Intro
+### Intro
 Like any developer, my preference of tools has been built pretty much entirely on my past experiences. If i’m not using the tool and it’s known to be an aid to developers then there’s a good chance i’m uninformed on the topic. This was particularly true with Jest, which has become the most widely used library for testing ReactJS applications, so I thought it would be wise to explore the topic a little bit in a blog post. In this post, I want to share my feedback about recently using Jest while contributing to the next-static project.  
 
 I recently ended up pivoting from a dynamic web application to a static site for tgrecojs.com. next-static and the solution has worked A1 so I ended up contributing to the project. The first order of business was to write some tests for this project so I dove right in. Throughout 2017 I received a ton of experience writing unit tests for ReactJS apps but I always used tape so it was no shock that I initially gravitated to my normal dev environment for writing tests.
 
-#### Reading the Unit Test
+### Reading the Unit Test
 A few minutes after getting my environment set up I had the boilerplate for my first `test.js` file all ready to go. 
 
 Below, we can see the code submitted in [initial pull request](https://github.com/infiniteluke/next-static/pull/9/commits/006dbe18a2b80f25f9b4d95c090e940da09f09f7).
@@ -64,9 +64,8 @@ One of Jest’s marquee behaviors is it’s ability to magically runs tests as l
 
 At the time of writing my test, I wasn’t even aware of this criteria however my code was inside [test.js](https://github.com/infiniteluke/next-static/blob/master/src/components/Post/test.js) file so everything worked out great. Additionally, I could completely eliminate that main index.test.js file as the `jest` command would navigate to the tests on its own. Once inside these tests, Jest will look for specific global variables that it provides users with for writing tests. In my case, I had to swap out `test` for Jest's `describe` function which will signify that a test suite has been created.
 
-> Globals
-> In your test files, Jest puts each of these methods and objects into the global environment. You don't have to require or import anything to use them.
- - [Jest Docs](https://facebook.github.io/jest/docs/en/api.html)
+> "In your test files, Jest puts each of these methods and objects into the global environment. You don't have to require or import anything to use them."
+ - [Jest Docs on Globals](https://facebook.github.io/jest/docs/en/api.html)
 
 
 These globals are what allow Jest to magically run our tests without needing us to any code. I don’t want to be over critical of an extremely well known tool like Jest however I became very conscious of polluting my global scope throughout the last year. Yes, even in regards to testing. Over time, I became super comfortable with importing tape directly. It only took a write an import statement (I could add to a VS code snippet if I really needed to) and I feel comfort in knowing my test code is completely self-contained and free from outside bugs. Now, I don’t want to make it seem like i’m nitpicking here. This is merely my feedback on the library. That being said, I think that this no set-up configuration could allows testing to get off the ground as soon as possible.
@@ -94,12 +93,12 @@ expect(actual).toEqual(expected);
 ```
 
 As you can see, my test no longer has the `assert` call back that was used with Tape. Instead, we see Jest’s `expect` function to create test assertions. Specifically, we see `expect` asserting that the `actual` value is equal to the `expected` value using `toEqual`. As you can see, migrating this test really didn’t take much and it felt good know that I could have certainly migrated any test’s I’ve written to use Jest without any sort of conflict. Same concepts just different libraries. I love sinking my teeth into knew technologies (especially if I can undertand them from the jump) so it felt good to have my tests now passing with Jest. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8QXkTFKrW5U" frameborder="0" allowfullscreen></iframe>
 
-
-#### You had one job
+### You had one job
 A day after pushing my newly committed Jest’ test to the next-static repo, I was informed that I failed to fully understand what was being asked of me. I produced a unit test but I really needed to create a snapshot test. Great! Now that I correctly identified the objective, I just needed to find out what exactly a snapshot test was.
 
-#### Enter Snapshot Testing
+### Enter Snapshot Testing
 As it’s name suggests, a snapshot test will take a `snapshot` of a component each time a test is run. If there is an existing snapshot, Jest will compare the two to make sure that nothing in our UI has changed unexpectedly. This is meant to provide developers with instant feedback of their UI. Whereas unit test assertions are meant to test a specific behavior, snapshot tests allow us to monitor trivial modifications in our UI. 
 
 To accomplish this, we use the `react-test-renderer` library’s `.toMatchSnapshot()` method. Once this is set up, Jest will compare the snapshot of our component to any previous snapshot’s and test their contents are the same. 
@@ -219,5 +218,5 @@ Additionally, tape allows me to use TAP. Call me old-fashioned but TAP has been 
 
 
 
-#### Final Words
-There’s no denying that Jest makes it easy to get begin testing code. In fact, easy is putting it lightly. As I just mentioned, it was so easy that I was initially a bit confused as to how this was supposed to work but the point is that it did indeed work. Aside from the globabl varables and not being able to easily print test results in TAP and the global variables, I have no qualms about the effectiveness of Jest. On the contrary, I am really excited to see what else Jest has to offer as I know that this isn't the last I will see of it! Hopefully you too are 
+### Final Words
+There’s no denying that Jest makes it easy to get begin testing code. In fact, easy is putting it lightly. As I just mentioned, it was so easy that I was initially a bit confused as to how this was supposed to work but the point is that it did indeed work. Aside from the globabl varables and not being able to easily print test results in TAP and the global variables, I have no qualms about the effectiveness of Jest. On the contrary, I am really excited to see what else Jest has to offer as I know that this isn't the last I will see of it!
