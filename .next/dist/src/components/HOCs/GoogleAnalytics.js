@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -32,6 +36,9 @@ var _googleAnalytics = require('../../lib/googleAnalytics');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/src/components/HOCs/GoogleAnalytics.js';
+
+
 var withGA = function withGA(ComposedComponent) {
   return function (_Component) {
     (0, _inherits3.default)(HOC, _Component);
@@ -54,7 +61,12 @@ var withGA = function withGA(ComposedComponent) {
     }, {
       key: 'render',
       value: function render() {
-        return _react2.default.createElement(ComposedComponent, this.props);
+        return _react2.default.createElement(ComposedComponent, (0, _extends3.default)({}, this.props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14
+          }
+        }));
       }
     }]);
 

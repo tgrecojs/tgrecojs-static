@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
@@ -46,12 +50,60 @@ var _component2 = _interopRequireDefault(_component);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/src/components/Layout/index.js';
+
 var Layout = _layouts2.default[_config2.default.layout || 'none'];
 
 exports.default = function (Page, title) {
   return function (_ref) {
     var props = (0, _objectWithoutProperties3.default)(_ref, []);
 
-    return _react2.default.createElement(_styledComponents.ThemeProvider, { theme: _config2.default.theme ? _config2.default.theme.colors : _theme.defaultColors }, _react2.default.createElement(Layout, null, _react2.default.createElement(_head2.default, null, _react2.default.createElement('title', null, _config2.default.siteName + ' - ' + title)), _react2.default.createElement(_component2.default, null), _react2.default.createElement(_Header2.default, null), _react2.default.createElement('div', { className: 'content' }, _react2.default.createElement('main', { className: 'main' }, _react2.default.createElement(Page, props))), _react2.default.createElement(_Footer2.default, { className: 'footer' })));
+    return _react2.default.createElement(_styledComponents.ThemeProvider, { theme: _config2.default.theme ? _config2.default.theme.colors : _theme.defaultColors, __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      }
+    }, _react2.default.createElement(Layout, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      }
+    }, _react2.default.createElement(_head2.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      }
+    }, _react2.default.createElement('title', {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      }
+    }, _config2.default.siteName + ' - ' + title)), _react2.default.createElement(_component2.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      }
+    }), _react2.default.createElement(_Header2.default, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      }
+    }), _react2.default.createElement('div', { className: 'content', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      }
+    }, _react2.default.createElement('main', { className: 'main', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      }
+    }, _react2.default.createElement(Page, (0, _extends3.default)({}, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      }
+    })))), _react2.default.createElement(_Footer2.default, { className: 'footer', __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      }
+    })));
   };
 };

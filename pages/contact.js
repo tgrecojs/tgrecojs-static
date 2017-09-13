@@ -96,25 +96,8 @@ const data = JSON.stringify({
     },
   ],
 });
-
-const config = {
-  headers: {
-    'Authorization':
-       'Bearer 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',
-     'content-type': 'application/json',
-   },
-   url: 'https://api.sendgrid.com/v3/mail/send',
-   data,
-}
-export default Layout(({ settings, emailData = config }) => {
-  axios
-    .post(emailData)
-    .then(response => {
-      console.log(response);
-      return response.json();
-    })
-    .catch(e => new Error('Problem with Sendrid', e));
-  return (
+export default Layout(
+  () =>
     <Form action="https://formspree.io/hello@tgrecojs.com" method="POST">
       <div>
         <label htmlFor="name">Name</label>
@@ -145,11 +128,12 @@ export default Layout(({ settings, emailData = config }) => {
           rows="10"
           columns="4"
           placeholder="Use this text area to provide some more information regarding your inquiry."
-          name="reason" />
+          name="reason"
+        />
       </div>
       <BtnRow>
         <button type="submit">Click to Submit</button>
       </BtnRow>
-    </Form>
-  );
-}, 'Contact');
+    </Form>,
+  'Contact'
+);

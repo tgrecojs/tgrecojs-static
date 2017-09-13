@@ -34,6 +34,9 @@ var _reactModal2 = _interopRequireDefault(_reactModal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/src/components/shared/modal.js';
+
+
 var customStyles = {
   content: {
     top: '50%',
@@ -84,15 +87,71 @@ var _class = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement('div', null, _react2.default.createElement('button', { onClick: this.openModal }, 'Open Modal'), _react2.default.createElement(_reactModal2.default, {
+      return _react2.default.createElement('div', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        }
+      }, _react2.default.createElement('button', { onClick: this.openModal, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        }
+      }, 'Open Modal'), _react2.default.createElement(_reactModal2.default, {
         isOpen: this.state.modalIsOpen,
         onAfterOpen: this.afterOpenModal,
         onRequestClose: this.closeModal,
         style: customStyles,
-        contentLabel: 'Example Modal'
+        contentLabel: 'Example Modal',
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
       }, _react2.default.createElement('h2', { ref: function ref(subtitle) {
           return _this2.subtitle = subtitle;
-        } }, 'Hello'), _react2.default.createElement('button', { onClick: this.closeModal }, 'close'), _react2.default.createElement('div', null, 'I am a modal'), _react2.default.createElement('form', null, _react2.default.createElement('input', null), _react2.default.createElement('button', null, 'tab navigation'), _react2.default.createElement('button', null, 'stays'), _react2.default.createElement('button', null, 'inside'), _react2.default.createElement('button', null, 'the modal'))));
+        }, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        }
+      }, 'Hello'), _react2.default.createElement('button', { onClick: this.closeModal, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        }
+      }, 'close'), _react2.default.createElement('div', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        }
+      }, 'I am a modal'), _react2.default.createElement('form', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        }
+      }, _react2.default.createElement('input', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        }
+      }), _react2.default.createElement('button', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        }
+      }, 'tab navigation'), _react2.default.createElement('button', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        }
+      }, 'stays'), _react2.default.createElement('button', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        }
+      }, 'inside'), _react2.default.createElement('button', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        }
+      }, 'the modal'))));
     }
   }]);
 
