@@ -3,11 +3,9 @@ import Link from 'next/link';
 import Modal from '../shared/modal';
 const toggleLinksFn = () => {
   const linksEl = document.querySelector('.narrowLinks');
-  if (linksEl.style.display === 'block') {
-    linksEl.style.display = 'none';
-  } else {
-    linksEl.style.display = 'block';
-  }
+  linksEl.style.display === 'block'
+    ? (linksEl.style.display = 'none')
+    : (linksEl.style.display = 'block');
 };
 
 const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
@@ -83,16 +81,31 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
         <Link href={`/`}>
           <a>Blogroll</a>
         </Link>
-        <Link href={`/contact`} as={`/contact`}>
-          <a>Contact Me</a>
-        </Link>
-        <a><iframe
-          src="https://platform.twitter.com/widgets/follow_button.html?screen_name=tgrecojs&show_screen_name=false&show_count=false&size=l"
-          title="Follow TwitterDev on Twitter"
-          width="80"
-          height="30"
-          style={{ border: '0', overflow: 'hidden' }}
-        /></a>
+          <a
+            href="https://app.acuityscheduling.com/schedule.php?owner=13089768"
+            className="acuity-embed-button"
+            style={{
+              background: '#49768c',
+              color: '#fff',
+              padding: '8px 12px',
+              border: '0px',
+              boxShadow: '0 -2px 0 rgba(0,0,0,0.15)',
+              borderRadius: '4px',
+              textDecoration: 'none',
+              display: 'inline-block',
+            }}
+          >
+            Schedule Appointment
+          </a>
+        <a>
+          <iframe
+            src="https://platform.twitter.com/widgets/follow_button.html?screen_name=tgrecojs&show_screen_name=false&show_count=false&size=l"
+            title="Follow TwitterDev on Twitter"
+            width="80"
+            height="30"
+            style={{ border: '0', overflow: 'hidden' }}
+          />
+        </a>
       </div>
     </div>
     <div className="navNarrow">
@@ -101,6 +114,22 @@ const NavComponent = ({ toggleLinks = toggleLinksFn }) =>
         <Link href={`/contact`} as={`/contact`}>
           <a>Contact Me</a>
         </Link>
+        <a
+        href="https://app.acuityscheduling.com/schedule.php?owner=13089768"
+        className="acuity-embed-button"
+        style={{
+          background: '#49768c',
+          color: '#fff',
+          padding: '8px 12px',
+          border: '0px',
+          boxShadow: '0 -2px 0 rgba(0,0,0,0.15)',
+          borderRadius: '4px',
+          textDecoration: 'none',
+          display: 'inline-block',
+        }}
+      >
+        Schedule Appointment
+      </a>
         <Link href="/">
           <a onClick={toggleLinks}>Home</a>
         </Link>

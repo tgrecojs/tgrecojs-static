@@ -40,9 +40,6 @@ var _styledNormalize2 = _interopRequireDefault(_styledNormalize);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/pages/_document.js?entry';
-
-
 var MyDocument = function (_Document) {
   (0, _inherits3.default)(MyDocument, _Document);
 
@@ -56,89 +53,27 @@ var MyDocument = function (_Document) {
     key: 'render',
     value: function render() {
       var sheet = new _styledComponents.ServerStyleSheet();
-      var main = sheet.collectStyles(_react2.default.createElement(_document.Main, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        }
-      }));
+      var main = sheet.collectStyles(_react2.default.createElement(_document.Main, null));
       var styleTags = sheet.getStyleElement();
-      return _react2.default.createElement('html', { lang: 'en-US', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        }
-      }, _react2.default.createElement(_document.Head, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 15
-        }
-      }, styleTags, _react2.default.createElement('style', { type: 'text/css', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        }
-      }, _styledNormalize2.default), _react2.default.createElement('meta', {
+      return _react2.default.createElement('html', { lang: 'en-US' }, _react2.default.createElement(_document.Head, null, styleTags, _react2.default.createElement('style', { type: 'text/css' }, _styledNormalize2.default), _react2.default.createElement('meta', {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1.0',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        }
-      }), _react2.default.createElement('link', { rel: 'manifest', href: './static/manifest.json', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        }
-      }), _react2.default.createElement('meta', { name: 'theme-color', content: '#56a5b7', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        }
-      }), _react2.default.createElement('link', {
+        content: 'width=device-width, initial-scale=1.0'
+      }), _react2.default.createElement('link', { rel: 'manifest', href: './static/manifest.json' }), _react2.default.createElement('meta', { name: 'theme-color', content: '#56a5b7' }), _react2.default.createElement('link', {
         rel: 'shortcut icon',
         type: 'image/png',
-        href: '/static/tg-logo.png',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 26
-        }
-      })), _react2.default.createElement('body', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        }
-      }, _react2.default.createElement('div', { className: 'root', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        }
-      }, main), _react2.default.createElement(_document.NextScript, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        }
+        href: '/static/tg-logo.png'
+      })), _react2.default.createElement('body', null, _react2.default.createElement('div', { className: 'root' }, main), _react2.default.createElement(_document.NextScript, null), _react2.default.createElement('link', {
+        rel: 'stylesheet',
+        href: '//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-coy.min.css'
       }), _react2.default.createElement('link', {
         rel: 'stylesheet',
-        href: '//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-coy.min.css',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        }
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'
       }), _react2.default.createElement('link', {
         rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        }
+        href: 'https://fonts.googleapis.com/css?family=Lato'
       }), _react2.default.createElement('link', {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Lato',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        }
-      }), _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        }
-      })));
+        href: 'http://secure.acuityscheduling.com/embed/button/13089768.css', id: 'acuity-button-styles' }), _react2.default.createElement('script', { src: 'http://secure.acuityscheduling.com/embed/button/13089768.js', async: true }), _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' })));
     }
   }]);
 

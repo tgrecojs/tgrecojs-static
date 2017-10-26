@@ -30,19 +30,8 @@ var _GoogleAnalytics2 = _interopRequireDefault(_GoogleAnalytics);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/pages/index.js?entry';
 exports.default = (0, _GoogleAnalytics2.default)((0, _Layout2.default)(function () {
-  return _react2.default.createElement('div', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    }
-  }, _posts2.default.map(function (post) {
-    return _react2.default.createElement(_index2.default, (0, _extends3.default)({ key: post.slug }, post, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      }
-    }));
+  return _react2.default.createElement('div', null, _posts2.default.map(function (post) {
+    return _react2.default.createElement(_index2.default, (0, _extends3.default)({ key: post.slug }, post));
   }));
 }, 'Home'));

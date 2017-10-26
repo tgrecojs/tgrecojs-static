@@ -14,8 +14,6 @@ var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/src/components/Header/index.js';
-
 /* eslint-disable react/no-danger */
 
 var Logo = _styledComponents2.default.img.withConfig({
@@ -24,18 +22,5 @@ var Logo = _styledComponents2.default.img.withConfig({
 })(['max-width:300px;margin-top:3em;']);
 
 exports.default = function () {
-  return _react2.default.createElement('div', { className: 'header', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    }
-  }, _react2.default.createElement(Logo, { src: '/static/tg-logo.png', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    }
-  }), _react2.default.createElement('h3', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    }
-  }, 'Providing the latest in web application programming.'));
+  return _react2.default.createElement('div', { className: 'header' }, _react2.default.createElement(Logo, { src: '/static/tg-logo.png' }), _react2.default.createElement('h3', null, 'Providing the latest in web application programming.'));
 };

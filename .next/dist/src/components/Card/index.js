@@ -20,9 +20,6 @@ require('../../../types/post');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/thomasgreco/tgrecojs-static/src/components/Card/index.js';
-
-
 // import theme from '../../lib/theme';
 var Anchor = _styledComponents2.default.a.withConfig({
   displayName: 'Card__Anchor',
@@ -46,65 +43,10 @@ exports.default = function () {
       slug = _ref.slug,
       tags = _ref.tags;
 
-  return _react2.default.createElement(PostCard, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    }
-  }, _react2.default.createElement('h3', { itemProp: 'headline', className: 'post--title', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    }
-  }, title), _react2.default.createElement('p', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    }
-  }, description), _react2.default.createElement(_link2.default, { prefetch: true, href: '/post?post=' + slug, as: '/post/' + slug, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    }
-  }, _react2.default.createElement(Btn, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    }
-  }, ' ', _react2.default.createElement(Anchor, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    }
-  }, 'Read Post'))), _react2.default.createElement('footer', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    }
-  }, _react2.default.createElement('small', { className: 'post--tags', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
-    }
-  }, _react2.default.createElement('span', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    }
-  }, 'Filed under: '), tags.map(function (tag, index) {
-    return _react2.default.createElement('span', { key: tag, itemProp: 'keywords', className: 'post--tag', __source: {
-        fileName: _jsxFileName,
-        lineNumber: 68
-      }
-    }, _react2.default.createElement(_link2.default, { prefetch: true,
+  return _react2.default.createElement(PostCard, null, _react2.default.createElement('h3', { itemProp: 'headline', className: 'post--title' }, title), _react2.default.createElement('p', null, description), _react2.default.createElement(_link2.default, { prefetch: true, href: '/post?post=' + slug, as: '/post/' + slug }, _react2.default.createElement(Btn, null, ' ', _react2.default.createElement(Anchor, null, 'Read Post'))), _react2.default.createElement('footer', null, _react2.default.createElement('small', { className: 'post--tags' }, _react2.default.createElement('span', null, 'Filed under: '), tags.map(function (tag, index) {
+    return _react2.default.createElement('span', { key: tag, itemProp: 'keywords', className: 'post--tag' }, _react2.default.createElement(_link2.default, { prefetch: true,
       href: '/tag?tag=' + tag,
-      as: '/tag/' + tag.replace(/\s+/g, '-').toLowerCase(),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      }
-    }, _react2.default.createElement('a', {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      }
-    }, tag)), index !== tags.length - 1 ? ', ' : '');
+      as: '/tag/' + tag.replace(/\s+/g, '-').toLowerCase()
+    }, _react2.default.createElement('a', null, tag)), index !== tags.length - 1 ? ', ' : '');
   }))));
 };
